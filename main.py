@@ -1,10 +1,10 @@
 import sqlite3
 con = sqlite3.connect('hospital.db')
 cursor = con.cursor()
-sqlite_query = '''CREATE TABLE Patient_detail(patientCode INTEGER PRIMARY KEY, name TEXT NOT NULL,
-address TEXT Not NULL, phone TEXT NOT NULL);'''
-cursor.execute(sqlite_query)
-print('table is created successfully')
+#sqlite_query = '''CREATE TABLE Patient_detail(patientCode INTEGER PRIMARY KEY, name TEXT NOT NULL,
+#address TEXT Not NULL, phone TEXT NOT NULL);'''
+#cursor.execute(sqlite_query)
+#print('table is created successfully')
 
 def Add_Patient_details():  # add patient details
     Patient_Code = input("Enter Patient Code : ")
@@ -15,7 +15,7 @@ def Add_Patient_details():  # add patient details
     insert_query = '''INSERT INTO Patient_detail VALUES (?,?,?,?)'''
     cursor.execute(insert_query, data)
     con.commit()
-    print("Employee Added Successfully\n ")
+    print("Patient Added Successfully\n ")
     main1()
 
 
